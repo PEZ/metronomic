@@ -1,0 +1,59 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* Metronomic */ = {
+		activeExec = 0;
+		executables = (
+			EB39D4F20ED1F37A009BDBEE /* Metronomic */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = EB39D4F20ED1F37A009BDBEE /* Metronomic */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* Metronomic */;
+		codeSenseManager = EB39D4FC0ED1F399009BDBEE /* Code sense */;
+		executables = (
+			EB39D4F20ED1F37A009BDBEE /* Metronomic */,
+		);
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 248640378;
+			PBXWorkspaceStateSaveDate = 248640378;
+		};
+		sourceControlManager = EB39D4FB0ED1F399009BDBEE /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	EB39D4F20ED1F37A009BDBEE /* Metronomic */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = Metronomic;
+		sourceDirectories = (
+		);
+	};
+	EB39D4FB0ED1F399009BDBEE /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	EB39D4FC0ED1F399009BDBEE /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+}
