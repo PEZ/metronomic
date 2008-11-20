@@ -1,8 +1,8 @@
 /*
-    File: main.m
+    File: EditingViewController.h
 Abstract: 
-Creates and launches the application. The MainWindow nib will be loaded and the application delegate object
-will be unarchived from it.  
+Manages editing a single field of data in a Book. Dual mode editor, it supports both plain text field editing
+and date value editing with a UIDatePicker.
 
  Version: 1.9
 
@@ -50,10 +50,29 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 #import <UIKit/UIKit.h>
 
-int main(int argc, char *argv[]) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
+
+@interface EditingViewController : UIViewController {
+    NSString *textValue;
+    id editedObject;
+    NSString *editedFieldKey;
+    IBOutlet UITextField *textField;
+    BOOL dateEditing;
+    NSDate *dateValue;
+    IBOutlet UIDatePicker *datePicker;
+    NSDateFormatter *dateFormatter;
 }
+
+@property (nonatomic, retain) id editedObject;
+@property (nonatomic, retain) NSString *textValue;
+@property (nonatomic, retain) NSDate *dateValue;
+@property (nonatomic, retain) NSString *editedFieldKey;
+@property (nonatomic, assign) BOOL dateEditing;
+@property (nonatomic, readonly) UITextField *textField;
+@property (nonatomic, retain) NSDateFormatter *dateFormatter;
+
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
+- (IBAction)dateChanged:(id)sender;
+
+@end
 

@@ -1,25 +1,101 @@
 // !$*UTF8*$!
 {
+	1D3623240D0F684500981E51 /* MetronomicAppDelegate.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 504}}";
+			sepNavSelRange = "{380, 11}";
+			sepNavVisRange = "{49, 1036}";
+		};
+	};
+	1D3623250D0F684500981E51 /* MetronomicAppDelegate.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {716, 2016}}";
+			sepNavSelRange = "{180, 33}";
+			sepNavVisRange = "{0, 692}";
+		};
+	};
 	1D6058900D05DD3D006BFB54 /* Metronomic */ = {
 		activeExec = 0;
 		executables = (
 			EB39D4F20ED1F37A009BDBEE /* Metronomic */,
 		);
 	};
+	28A0AAE50D9B0CCF005BE974 /* Metronomic_Prefix.pch */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 447}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 189}";
+		};
+	};
+	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 1834}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 834}";
+		};
+	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = EB39D4F20ED1F37A009BDBEE /* Metronomic */;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* Metronomic */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* Metronomic */,
+		);
 		codeSenseManager = EB39D4FC0ED1F399009BDBEE /* Code sense */;
 		executables = (
 			EB39D4F20ED1F37A009BDBEE /* Metronomic */,
 		);
 		perUserDictionary = {
-			PBXPerProjectTemplateStateSaveDate = 248640378;
-			PBXWorkspaceStateSaveDate = 248640378;
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					735,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 248826040;
+			PBXWorkspaceStateSaveDate = 248826040;
+		};
+		perUserProjectItems = {
+			EB39D52C0ED49C03009BDBEE = EB39D52C0ED49C03009BDBEE /* PBXTextBookmark */;
+			EB6E31F40ED4C674001951C0 = EB6E31F40ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E31F50ED4C674001951C0 = EB6E31F50ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E31F60ED4C674001951C0 = EB6E31F60ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E31F70ED4C674001951C0 = EB6E31F70ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E31F90ED4C674001951C0 = EB6E31F90ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E31FA0ED4C674001951C0 = EB6E31FA0ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E31FB0ED4C674001951C0 = EB6E31FB0ED4C674001951C0 /* PlistBookmark */;
+			EB6E31FD0ED4C674001951C0 = EB6E31FD0ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E32030ED4C674001951C0 = EB6E32030ED4C674001951C0 /* PBXTextBookmark */;
+			EB6E32410ED4C8AE001951C0 = EB6E32410ED4C8AE001951C0 /* PBXTextBookmark */;
+			EB6E32420ED4C8AE001951C0 = EB6E32420ED4C8AE001951C0 /* PlistBookmark */;
+			EB6E32430ED4C8AE001951C0 = EB6E32430ED4C8AE001951C0 /* PBXTextBookmark */;
+			EB6E32440ED4C8AE001951C0 = EB6E32440ED4C8AE001951C0 /* PlistBookmark */;
 		};
 		sourceControlManager = EB39D4FB0ED1F399009BDBEE /* Source Control */;
 		userBuildSettings = {
+		};
+	};
+	29B97316FDCFA39411CA2CEA /* main.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {913, 840}}";
+			sepNavSelRange = "{2744, 0}";
+			sepNavVisRange = "{1339, 1404}";
 		};
 	};
 	EB39D4F20ED1F37A009BDBEE /* Metronomic */ = {
@@ -29,12 +105,13 @@
 		argumentStrings = (
 		);
 		autoAttachOnCrash = 1;
-		breakpointsEnabled = 1;
+		breakpointsEnabled = 0;
 		configStateDict = {
 		};
 		customDataFormattersEnabled = 1;
 		debuggerPlugin = GDBDebugging;
 		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
 		enableDebugStr = 1;
 		environmentEntries = (
 		);
@@ -42,6 +119,8 @@
 		executableUserSymbolLevel = 0;
 		libgmallocEnabled = 0;
 		name = Metronomic;
+		savedGlobals = {
+		};
 		sourceDirectories = (
 		);
 	};
@@ -55,5 +134,169 @@
 	EB39D4FC0ED1F399009BDBEE /* Code sense */ = {
 		isa = PBXCodeSenseManager;
 		indexTemplatePath = "";
+	};
+	EB39D52C0ED49C03009BDBEE /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 8";
+		rLen = 0;
+		rLoc = 128;
+		rType = 0;
+		vrLen = 358;
+		vrLoc = 0;
+	};
+	EB6E31B60ED4C2C5001951C0 /* AddViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {716, 1232}}";
+			sepNavSelRange = "{2791, 0}";
+			sepNavVisRange = "{2214, 1097}";
+		};
+	};
+	EB6E31BC0ED4C2C5001951C0 /* DetailViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {716, 2366}}";
+			sepNavSelRange = "{2651, 0}";
+			sepNavVisRange = "{2151, 775}";
+		};
+	};
+	EB6E31C00ED4C2C5001951C0 /* MasterViewController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {716, 2968}}";
+			sepNavSelRange = "{6216, 112}";
+			sepNavVisRange = "{5651, 1130}";
+		};
+	};
+	EB6E31F40ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 834;
+		vrLoc = 0;
+	};
+	EB6E31F50ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28A0AAE50D9B0CCF005BE974 /* Metronomic_Prefix.pch */;
+		name = "Metronomic_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 189;
+		vrLoc = 0;
+	};
+	EB6E31F60ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 29B97316FDCFA39411CA2CEA /* main.m */;
+		name = "main.m: 60";
+		rLen = 0;
+		rLoc = 2744;
+		rType = 0;
+		vrLen = 1404;
+		vrLoc = 1339;
+	};
+	EB6E31F70ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* MetronomicAppDelegate.h */;
+		name = "MetronomicAppDelegate.h: 15";
+		rLen = 11;
+		rLoc = 390;
+		rType = 0;
+		vrLen = 1036;
+		vrLoc = 49;
+	};
+	EB6E31F90ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MetronomicAppDelegate.m */;
+		name = "MetronomicAppDelegate.m: 15";
+		rLen = 0;
+		rLoc = 180;
+		rType = 0;
+		vrLen = 544;
+		vrLoc = 145;
+	};
+	EB6E31FA0ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28A0AAE50D9B0CCF005BE974 /* Metronomic_Prefix.pch */;
+		name = "Metronomic_Prefix.pch: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 189;
+		vrLoc = 0;
+	};
+	EB6E31FB0ED4C674001951C0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/pez/Documents/XCode Projects/Metronomic/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	EB6E31FD0ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 834;
+		vrLoc = 0;
+	};
+	EB6E32030ED4C674001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* MetronomicAppDelegate.h */;
+		name = "MetronomicAppDelegate.h: 15";
+		rLen = 11;
+		rLoc = 390;
+		rType = 0;
+		vrLen = 1036;
+		vrLoc = 49;
+	};
+	EB6E32410ED4C8AE001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MetronomicAppDelegate.m */;
+		name = "MetronomicAppDelegate.m: 10";
+		rLen = 0;
+		rLoc = 180;
+		rType = 0;
+		vrLen = 1145;
+		vrLoc = 0;
+	};
+	EB6E32420ED4C8AE001951C0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/pez/Documents/XCode Projects/Metronomic/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
+	};
+	EB6E32430ED4C8AE001951C0 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* MetronomicAppDelegate.m */;
+		name = "MetronomicAppDelegate.m: 10";
+		rLen = 0;
+		rLoc = 180;
+		rType = 0;
+		vrLen = 1145;
+		vrLoc = 0;
+	};
+	EB6E32440ED4C8AE001951C0 /* PlistBookmark */ = {
+		isa = PlistBookmark;
+		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
+		fallbackIsa = PBXBookmark;
+		isK = 0;
+		kPath = (
+		);
+		name = "/Users/pez/Documents/XCode Projects/Metronomic/Info.plist";
+		rLen = 0;
+		rLoc = 2147483647;
 	};
 }

@@ -15,6 +15,15 @@
 		2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E55F0DE3E45000AC0155 /* RootViewController.xib */; };
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
+		EB56EE460ED4C8E100D881E4 /* bookdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = EB56EE450ED4C8E100D881E4 /* bookdb.sql */; };
+		EB6E31B30ED4C29F001951C0 /* DetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6E31B10ED4C29F001951C0 /* DetailView.xib */; };
+		EB6E31B40ED4C29F001951C0 /* EditingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB6E31B20ED4C29F001951C0 /* EditingView.xib */; };
+		EB6E31C10ED4C2C5001951C0 /* AddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6E31B60ED4C2C5001951C0 /* AddViewController.m */; };
+		EB6E31C30ED4C2C5001951C0 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6E31BA0ED4C2C5001951C0 /* Book.m */; };
+		EB6E31C40ED4C2C5001951C0 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6E31BC0ED4C2C5001951C0 /* DetailViewController.m */; };
+		EB6E31C50ED4C2C5001951C0 /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6E31BE0ED4C2C5001951C0 /* EditingViewController.m */; };
+		EB6E31C60ED4C2C5001951C0 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6E31C00ED4C2C5001951C0 /* MasterViewController.m */; };
+		EB6E31E80ED4C49F001951C0 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EB6E31E70ED4C49F001951C0 /* libsqlite3.0.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +40,20 @@
 		28C286E00D94DF7D0034E888 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB56EE450ED4C8E100D881E4 /* bookdb.sql */ = {isa = PBXFileReference; lastKnownFileType = file; path = bookdb.sql; sourceTree = "<group>"; };
+		EB6E31B10ED4C29F001951C0 /* DetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailView.xib; sourceTree = "<group>"; };
+		EB6E31B20ED4C29F001951C0 /* EditingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditingView.xib; sourceTree = "<group>"; };
+		EB6E31B50ED4C2C5001951C0 /* AddViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddViewController.h; sourceTree = "<group>"; };
+		EB6E31B60ED4C2C5001951C0 /* AddViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddViewController.m; sourceTree = "<group>"; };
+		EB6E31B90ED4C2C5001951C0 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		EB6E31BA0ED4C2C5001951C0 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		EB6E31BB0ED4C2C5001951C0 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		EB6E31BC0ED4C2C5001951C0 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		EB6E31BD0ED4C2C5001951C0 /* EditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingViewController.h; sourceTree = "<group>"; };
+		EB6E31BE0ED4C2C5001951C0 /* EditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
+		EB6E31BF0ED4C2C5001951C0 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		EB6E31C00ED4C2C5001951C0 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		EB6E31E70ED4C49F001951C0 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +64,7 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
+				EB6E31E80ED4C49F001951C0 /* libsqlite3.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,6 +74,16 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EB6E31B50ED4C2C5001951C0 /* AddViewController.h */,
+				EB6E31B60ED4C2C5001951C0 /* AddViewController.m */,
+				EB6E31B90ED4C2C5001951C0 /* Book.h */,
+				EB6E31BA0ED4C2C5001951C0 /* Book.m */,
+				EB6E31BB0ED4C2C5001951C0 /* DetailViewController.h */,
+				EB6E31BC0ED4C2C5001951C0 /* DetailViewController.m */,
+				EB6E31BD0ED4C2C5001951C0 /* EditingViewController.h */,
+				EB6E31BE0ED4C2C5001951C0 /* EditingViewController.m */,
+				EB6E31BF0ED4C2C5001951C0 /* MasterViewController.h */,
+				EB6E31C00ED4C2C5001951C0 /* MasterViewController.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				1D3623240D0F684500981E51 /* MetronomicAppDelegate.h */,
@@ -90,6 +124,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				EB56EE450ED4C8E100D881E4 /* bookdb.sql */,
+				EB6E31B10ED4C29F001951C0 /* DetailView.xib */,
+				EB6E31B20ED4C29F001951C0 /* EditingView.xib */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -100,6 +137,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB6E31E70ED4C49F001951C0 /* libsqlite3.0.dylib */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -158,6 +196,9 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
+				EB6E31B30ED4C29F001951C0 /* DetailView.xib in Resources */,
+				EB6E31B40ED4C29F001951C0 /* EditingView.xib in Resources */,
+				EB56EE460ED4C8E100D881E4 /* bookdb.sql in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +212,11 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* MetronomicAppDelegate.m in Sources */,
 				28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */,
+				EB6E31C10ED4C2C5001951C0 /* AddViewController.m in Sources */,
+				EB6E31C30ED4C2C5001951C0 /* Book.m in Sources */,
+				EB6E31C40ED4C2C5001951C0 /* DetailViewController.m in Sources */,
+				EB6E31C50ED4C2C5001951C0 /* EditingViewController.m in Sources */,
+				EB6E31C60ED4C2C5001951C0 /* MasterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

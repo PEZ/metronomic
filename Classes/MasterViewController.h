@@ -1,8 +1,7 @@
 /*
-    File: main.m
+    File: MasterViewController.h
 Abstract: 
-Creates and launches the application. The MainWindow nib will be loaded and the application delegate object
-will be unarchived from it.  
+Controls the table and navigation between master and detail views.  
 
  Version: 1.9
 
@@ -50,10 +49,19 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 #import <UIKit/UIKit.h>
 
-int main(int argc, char *argv[]) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
+// Inform the compiler that the following classes are defined in the project:
+@class DetailViewController, AddViewController, EditingViewController, Book;
+
+@interface MasterViewController : UIViewController {
+    IBOutlet UITableView *tableView;
+    UINavigationController *addNavigationController;
+    DetailViewController *detailViewController;
+    AddViewController *addViewController;
 }
+
++ (EditingViewController *)editingViewController;
+
+- (IBAction)addBook:(id)sender;
+
+@end
 

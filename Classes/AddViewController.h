@@ -1,8 +1,9 @@
 /*
-    File: main.m
+    File: AddViewController.h
 Abstract: 
-Creates and launches the application. The MainWindow nib will be loaded and the application delegate object
-will be unarchived from it.  
+Displays the details of a new Book object and allows the user the edit them. The majority of functionality is identical
+to and inherited from the DetailViewController class. This class implements a different navigation bar and action
+methods for saving or cancelling new book creation.
 
  Version: 1.9
 
@@ -49,11 +50,11 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 */
 
 #import <UIKit/UIKit.h>
+#import "DetailViewController.h"
 
-int main(int argc, char *argv[]) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
-}
+@interface AddViewController : DetailViewController
 
+- (IBAction)cancel:(id)sender;
+- (IBAction)save:(id)sender;
+
+@end

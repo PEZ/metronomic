@@ -1,8 +1,7 @@
 /*
-    File: main.m
+    File: Book.h
 Abstract: 
-Creates and launches the application. The MainWindow nib will be loaded and the application delegate object
-will be unarchived from it.  
+The Book class manages the in-memory representation of information about a single book.  
 
  Version: 1.9
 
@@ -48,12 +47,48 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 */
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <sqlite3.h>
 
-int main(int argc, char *argv[]) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
+@interface Book : NSObject {
+    // Opaque reference to the underlying database.
+    sqlite3 *database;
+    // Primary key in the database.
+    NSInteger primaryKey;
+    // Attributes.
+    NSString *title;
+    NSDate *copyright;
+    NSString *author;
+    // Internal state variables. Hydrated tracks whether attribute data is in the object or the database.
+    BOOL hydrated;
+    // Dirty tracks whether there are in-memory changes to data which have no been written to the database.
+    BOOL dirty;
+    NSData *data;
 }
+
+// Property exposure for primary key and other attributes. The primary key is 'assign' because it is not an object, 
+// nonatomic because there is no need for concurrent access, and readonly because it cannot be changed without 
+// corrupting the database.
+@property (assign, nonatomic, readonly) NSInteger primaryKey;
+// The remaining attributes are copied rather than retained because they are value objects.
+@property (copy, nonatomic) NSString *title;
+@property (copy, nonatomic) NSDate *copyright;
+@property (copy, nonatomic) NSString *author;
+
+// Finalize (delete) all of the SQLite compiled queries.
++ (void)finalizeStatements;
+
+// Creates the object with primary key and title is brought into memory.
+- (id)initWithPrimaryKey:(NSInteger)pk database:(sqlite3 *)db;
+// Inserts the book into the database and stores its primary key.
+- (void)insertIntoDatabase:(sqlite3 *)database;
+
+// Brings the rest of the object data into memory. If already in memory, no action is taken (harmless no-op).
+- (void)hydrate;
+// Flushes all but the primary key and title out to the database.
+- (void)dehydrate;
+// Remove the book complete from the database. In memory deletion to follow...
+- (void)deleteFromDatabase;
+
+@end
 

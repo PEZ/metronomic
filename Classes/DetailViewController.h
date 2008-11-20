@@ -1,8 +1,7 @@
 /*
-    File: main.m
+    File: DetailViewController.h
 Abstract: 
-Creates and launches the application. The MainWindow nib will be loaded and the application delegate object
-will be unarchived from it.  
+Displays the details of a Book object and allows the user the edit them.
 
  Version: 1.9
 
@@ -50,10 +49,17 @@ Copyright (C) 2008 Apple Inc. All Rights Reserved.
 
 #import <UIKit/UIKit.h>
 
-int main(int argc, char *argv[]) {
-    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    int retVal = UIApplicationMain(argc, argv, nil, nil);
-    [pool release];
-    return retVal;
+@class Book, EditingViewController;
+
+@interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    Book *book;
+    IBOutlet UITableView *tableView;
+    NSDateFormatter *dateFormatter;
+    NSIndexPath *selectedIndexPath;
 }
+
+// Expose the book property to other objects (the MasterViewController).
+@property (nonatomic, retain) Book *book;
+
+@end
 
