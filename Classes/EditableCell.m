@@ -1,7 +1,7 @@
 /*
-     File: EditingViewController.h
+     File: EditableCell.m
  Abstract: 
- View controller for editing the content of a specific item.
+ Custom table cell used in the editing view's table. Contains a UITextField for in-place editing of content.
  
   Version: 1.1
  
@@ -47,36 +47,43 @@
  
  */
 
-#import <UIKit/UIKit.h>
+#import "EditableCell.h"
 
-@class EditableCell, TypeListController;
+@implementation EditableCell
 
-@interface EditingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSMutableDictionary *editingItem;
-    NSDictionary *editingItemCopy;
-    NSArray *editingTypes;
-    UITextField *nameField;
-    UITextField *typeField;
-    UITableView *tableView;
-    EditableCell *nameCell;
-    UITableViewCell *typeCell;
-    TypeListController *typeListController;
-    BOOL newItem;
-    NSMutableArray *editingContent;
-    NSString *sectionName;
-    UIView *headerView;
+@synthesize textField;
+
+- (id)initWithFrame:(CGRect)frame reuseIdentifier:(NSString *)reuseIdentifier {
+    if (self = [super initWithFrame:frame reuseIdentifier:reuseIdentifier]) {
+        // Set the frame to CGRectZero as it will be reset in layoutSubviews
+        textField = [[UITextField alloc] initWithFrame:CGRectZero];
+        textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+        textField.font = [UIFont systemFontOfSize:32.0];
+        textField.textColor = [UIColor darkGrayColor];
+        [self addSubview:textField];
+    }
+    return self;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *editingItem;
-@property (nonatomic, copy) NSDictionary *editingItemCopy;
-@property (nonatomic, retain) NSMutableArray *editingContent;
-@property (nonatomic, retain) NSArray *editingTypes;
-@property (nonatomic, copy) NSString *sectionName;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) TypeListController *typeListController;
-@property (nonatomic, retain) UIView *headerView;
+- (void)dealloc {
+    // Release allocated resources.
+    [textField release];
+    [super dealloc];
+}
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
-    
+- (void)layoutSubviews {
+    // Place the subviews appropriately.
+    textField.frame = CGRectInset(self.contentView.bounds, 10, 0);
+}
+
+- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
+    [super setSelected:selected animated:animated];
+    // Update text color so that it matches expected selection behavior.
+    if (selected) {
+        textField.textColor = [UIColor whiteColor];
+    } else {
+        textField.textColor = [UIColor darkGrayColor];
+    }
+}
+
 @end

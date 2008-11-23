@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>content</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Steak</string>
+				<key>Type</key>
+				<string>meat</string>
+			</dict>
+		</array>
+		<key>name</key>
+		<string>Food</string>
+		<key>types</key>
+		<array>
+			<string>meat</string>
+			<string>vegetable</string>
+			<string>starch</string>
+		</array>
+	</dict>
+	<dict>
+		<key>content</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>Ginger Ale</string>
+				<key>Type</key>
+				<string>soda</string>
+			</dict>
+			<dict>
+				<key>Name</key>
+				<string>Pinot Noir</string>
+				<key>Type</key>
+				<string>wine</string>
+			</dict>
+		</array>
+		<key>name</key>
+		<string>Beverage</string>
+		<key>types</key>
+		<array>
+			<string>juice</string>
+			<string>wine</string>
+			<string>soda</string>
+			<string>beer</string>
+		</array>
+	</dict>
+	<dict>
+		<key>content</key>
+		<array>
+			<dict>
+				<key>Name</key>
+				<string>German Chocolate</string>
+				<key>Type</key>
+				<string>cake</string>
+			</dict>
+		</array>
+		<key>name</key>
+		<string>Dessert</string>
+		<key>types</key>
+		<array>
+			<string>fruit</string>
+			<string>pie</string>
+			<string>cake</string>
+		</array>
+	</dict>
+</array>
+</plist>

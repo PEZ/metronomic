@@ -1,10 +1,9 @@
 /*
      File: EditingViewController.m
  Abstract: 
-Manages editing a single field of data in a Book. Dual mode editor, it supports both plain text field editing
-and date value editing with a UIDatePicker.
-
-  Version: 1.9
+ View controller for editing the content of a specific item.
+ 
+  Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -49,30 +48,19 @@ and date value editing with a UIDatePicker.
  */
 
 #import "EditingViewController.h"
-
+#import "EditableCell.h"
+#import "TypeListController.h"
 
 @implementation EditingViewController
 
-@synthesize textValue, editedObject, editedFieldKey, dateEditing, dateValue, textField, dateFormatter;
+@synthesize editingItem, editingItemCopy, editingContent, editingTypes, sectionName, tableView, typeListController, headerView;
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        // Create a date formatter to convert the date to a string format.
-        dateFormatter = [[NSDateFormatter alloc] init];
-        [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-        [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
-    }
-    return self;
-}
-
-- (void)viewDidLoad {
-    // Adjust the text field size and font.
-    CGRect frame = textField.frame;
-    frame.size.height += 10;
-    textField.frame = frame;
-    textField.font = [UIFont boldSystemFontOfSize:16];
-    // Set the view background to match the grouped tables in the other views.
-    self.view.backgroundColor = [UIColor groupTableViewBackgroundColor];
+// When we set the editing item, we also make a copy in case edits are made and then canceled - then we can
+// restore from the copy.
+- (void)setEditingItem:(NSMutableDictionary *)anItem {
+    [editingItem release];
+    editingItem = [anItem retain];
+    self.editingItemCopy = editingItem;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -81,49 +69,114 @@ and date value editing with a UIDatePicker.
 }
 
 - (void)dealloc {
-    [dateFormatter release];
-    [datePicker release];
-    [textValue release];
-    [editedObject release];
-    [editedFieldKey release];
-    [dateValue release];
+    [editingItem release];
+    [editingItemCopy release];
+    [editingContent release];
+    [editingTypes release];
+    [sectionName release];
+    [tableView release];
+    [typeListController release];
+    [headerView release];
     [super dealloc];
 }
 
 - (IBAction)cancel:(id)sender {
-    // cancel edits
+    // cancel edits, restore all values from the copy
+    newItem = NO;
+    [editingItem setValuesForKeysWithDictionary:editingItemCopy];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)save:(id)sender {
-    // save edits
-    if (dateEditing) {
-        [editedObject setValue:datePicker.date forKey:editedFieldKey];
-    } else {
-        [editedObject setValue:textField.text forKey:editedFieldKey];
+    // save edits to the editing item and add new item to the content.
+    [editingItem setValue:nameCell.textField.text forKey:@"Name"];
+    [editingItem setValue:typeCell.text forKey:@"Type"];
+    if (newItem) {
+        [editingContent addObject:editingItem];
+        newItem = NO;
     }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    NSString *capitalizedKey = [editedFieldKey capitalizedString];
-    self.title = capitalizedKey;
-    textField.placeholder = capitalizedKey;
-    if (dateEditing) {
-        textField.enabled = NO;
-        if (dateValue == nil) self.dateValue = [NSDate date];
-        textField.text = [dateFormatter stringFromDate:dateValue];
-        datePicker.date = dateValue;
-    } else {
-        textField.enabled = YES;
-        textField.text = textValue;
-        [textField becomeFirstResponder];
-    }
+- (void)viewDidLoad {
+    // use an empty view to position the cells in the vertical center of the portion of the view not covered by 
+    // the keyboard
+    self.headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 100)] autorelease];
 }
 
-- (IBAction)dateChanged:(id)sender {
-    if (dateEditing) textField.text = [dateFormatter stringFromDate:datePicker.date];
+- (void)viewWillAppear:(BOOL)animated {
+    self.title = [NSString stringWithFormat:@"Editing %@", sectionName];
+    // If the editing item is nil, that indicates a new item should be created
+    if (editingItem == nil) {
+        self.editingItem = [NSMutableDictionary dictionaryWithObjectsAndKeys:@"", @"Name", [editingTypes objectAtIndex:0], @"Type", nil];
+        // rather than immediately add the new item to the content array, set a flag. When the user saves, add the 
+        // item then; if the user cancels, no action is needed.
+        newItem = YES;
+    }
+    if (!typeCell) {
+        typeCell = [[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"TypeCell"];
+    }
+    typeCell.text = [editingItem valueForKey:@"Type"];
+    [tableView reloadData];
+    if (!nameCell) {
+        nameCell = [[EditableCell alloc] initWithFrame:CGRectZero reuseIdentifier:@"NameCell"];
+    }
+    nameCell.textField.placeholder = sectionName;
+    nameCell.textField.text = [editingItem valueForKey:@"Name"];
+    // Starts editing in the name field and shows the keyboard
+    [nameCell.textField becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    // hides the keyboard
+    [nameCell.textField resignFirstResponder];
+}
+
+- (NSIndexPath *)tableView:(UITableView *)aTableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        if (!typeListController) {
+            TypeListController *controller = [[TypeListController alloc] initWithNibName:@"TypeList" bundle:nil];
+            self.typeListController = controller;
+            [controller release];
+        }
+        typeListController.types = editingTypes;
+        typeListController.editingItem = editingItem;
+        [editingItem setValue:nameCell.textField.text forKey:@"Name"];
+        [editingItem setValue:typeCell.text forKey:@"Type"];
+        [self.navigationController pushViewController:typeListController animated:YES];
+    }
+    return indexPath;
+}
+
+- (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [aTableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+// Have an accessory view for the second section only
+- (UITableViewCellAccessoryType)tableView:(UITableView *)aTableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 0) ? UITableViewCellAccessoryNone : UITableViewCellAccessoryDisclosureIndicator;
+}
+
+// Make the header height in the first section 45 pixels
+- (CGFloat)tableView:(UITableView *)aTableView heightForHeaderInSection:(NSInteger)section {
+    return (section == 0) ? 45.0 : 10.0;
+}
+
+// Show a header for only the first section
+- (UIView *)tableView:(UITableView *)aTableView viewForHeaderInSection:(NSInteger)section {
+    return (section == 0) ? headerView : nil;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.section == 0) ? nameCell : typeCell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)aTableView {
+    return 2;
+}
+
+- (NSInteger)tableView:(UITableView *)aTableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
 }
 
 @end
-

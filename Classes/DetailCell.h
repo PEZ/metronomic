@@ -1,7 +1,8 @@
 /*
-     File: EditingViewController.h
+     File: DetailCell.h
  Abstract: 
- View controller for editing the content of a specific item.
+ Custom table cell used in the main view's table. Capable of displaying in two modes - a "type:name" mode for existing
+ data and a "prompt" mode when used as a placeholder for data creation.
  
   Version: 1.1
  
@@ -49,34 +50,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class EditableCell, TypeListController;
-
-@interface EditingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSMutableDictionary *editingItem;
-    NSDictionary *editingItemCopy;
-    NSArray *editingTypes;
-    UITextField *nameField;
-    UITextField *typeField;
-    UITableView *tableView;
-    EditableCell *nameCell;
-    UITableViewCell *typeCell;
-    TypeListController *typeListController;
-    BOOL newItem;
-    NSMutableArray *editingContent;
-    NSString *sectionName;
-    UIView *headerView;
+@interface DetailCell : UITableViewCell {
+    UITextField *type;
+    UITextField *name;
+    UITextField *prompt;
+    BOOL promptMode;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *editingItem;
-@property (nonatomic, copy) NSDictionary *editingItemCopy;
-@property (nonatomic, retain) NSMutableArray *editingContent;
-@property (nonatomic, retain) NSArray *editingTypes;
-@property (nonatomic, copy) NSString *sectionName;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) TypeListController *typeListController;
-@property (nonatomic, retain) UIView *headerView;
+@property (readonly, retain) UITextField *type;
+@property (readonly, retain) UITextField *name;
+@property (readonly, retain) UITextField *prompt;
+@property BOOL promptMode;
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
-    
 @end

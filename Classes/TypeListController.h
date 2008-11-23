@@ -1,7 +1,8 @@
 /*
-     File: EditingViewController.h
+     File: TypeListController.h
  Abstract: 
- View controller for editing the content of a specific item.
+ View controller for changing the type of a specific item. Displays a list of types with a checkmark accessory
+ view indicating the designated row. Selection of a row changes the type and navigates back to the previous view.
  
   Version: 1.1
  
@@ -49,34 +50,14 @@
 
 #import <UIKit/UIKit.h>
 
-@class EditableCell, TypeListController;
-
-@interface EditingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface TypeListController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+    NSArray *types;
     NSMutableDictionary *editingItem;
-    NSDictionary *editingItemCopy;
-    NSArray *editingTypes;
-    UITextField *nameField;
-    UITextField *typeField;
     UITableView *tableView;
-    EditableCell *nameCell;
-    UITableViewCell *typeCell;
-    TypeListController *typeListController;
-    BOOL newItem;
-    NSMutableArray *editingContent;
-    NSString *sectionName;
-    UIView *headerView;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *editingItem;
-@property (nonatomic, copy) NSDictionary *editingItemCopy;
-@property (nonatomic, retain) NSMutableArray *editingContent;
-@property (nonatomic, retain) NSArray *editingTypes;
-@property (nonatomic, copy) NSString *sectionName;
+@property (nonatomic, retain) NSArray *types;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) TypeListController *typeListController;
-@property (nonatomic, retain) UIView *headerView;
+@property (nonatomic, retain) NSMutableDictionary *editingItem;
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
-    
 @end

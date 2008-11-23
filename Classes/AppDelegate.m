@@ -1,11 +1,9 @@
 /*
-     File: AddViewController.m
+     File: AppDelegate.m
  Abstract: 
-Displays the details of a new Book object and allows the user the edit them. The majority of functionality is identical
-to and inherited from the DetailViewController class. This class implements a different navigation bar and action
-methods for saving or cancelling new book creation.
-
-  Version: 1.9
+ Application delegate. Manages the object graph of data that is the "model" part of the app's MVC design.
+ 
+  Version: 1.1
  
  Disclaimer: IMPORTANT:  This Apple software is supplied to you by Apple
  Inc. ("Apple") in consideration of your agreement to the following
@@ -49,38 +47,47 @@ methods for saving or cancelling new book creation.
  
  */
 
-#import "AddViewController.h"
-#import "Book.h"
-#import "MetronomicAppDelegate.h"
+#import "AppDelegate.h"
+#import "DetailViewController.h"
 
-@implementation AddViewController
+@implementation AppDelegate
 
-- (void)viewDidLoad {
-    // Override the DetailViewController viewDidLoad with different navigation bar items and title
-    self.title = @"New Book";
-    self.navigationItem.leftBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel 
-            target:self action:@selector(cancel:)] autorelease];
-    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave 
-            target:self action:@selector(save:)] autorelease];
+@synthesize window, navigationController, detailViewController, data, pathToUserCopyOfPlist;
+
+- (void)applicationDidFinishLaunching:(UIApplication *)application {    
+    // Check for data in Documents directory. Copy default appData.plist to Documents if not found.
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    self.pathToUserCopyOfPlist = [documentsDirectory stringByAppendingPathComponent:@"appData.plist"];
+    if ([fileManager fileExistsAtPath:pathToUserCopyOfPlist] == NO) {
+        NSString *pathToDefaultPlist = [[NSBundle mainBundle] pathForResource:@"appData" ofType:@"plist"];
+        if ([fileManager copyItemAtPath:pathToDefaultPlist toPath:pathToUserCopyOfPlist error:&error] == NO) {
+            NSAssert1(0, @"Failed to copy data with error message '%@'.", [error localizedDescription]);
+        }
+    }
+    // Unarchive the data, store it in the local property, and pass it to the main view controller
+    self.data = [[[NSMutableArray alloc] initWithContentsOfFile:pathToUserCopyOfPlist] autorelease];
+    detailViewController.data = data;
+    // Add the navigation controller's view to the window.
+    [window addSubview:navigationController.view];
+    // Show window
+    [window makeKeyAndVisible];
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    // Conditionally enable the "Save" button
-    self.navigationItem.rightBarButtonItem.enabled = (self.book.title && self.book.title.length > 0 &&
-            self.book.copyright && self.book.author && self.book.author.length > 0);
+- (void)dealloc {
+    [pathToUserCopyOfPlist release];
+    [detailViewController release];
+    [data release];
+    [navigationController release];
+    [window release];
+    [super dealloc];
 }
 
-- (IBAction)cancel:(id)sender {
-    [self.navigationController dismissModalViewControllerAnimated:YES];
-}
-
-- (IBAction)save:(id)sender {
-    MetronomicAppDelegate *appDelegate = (MetronomicAppDelegate *)[[UIApplication sharedApplication] delegate];
-    // Add the book to the global array of books
-    [appDelegate addBook:self.book];
-    // Dismiss the modal view to return to the main list
-    [self.navigationController dismissModalViewControllerAnimated:YES];
+- (void)applicationWillTerminate:(UIApplication *)application {
+    // save changes to plist in Documents
+    [data writeToFile:pathToUserCopyOfPlist atomically:NO];
 }
 
 @end

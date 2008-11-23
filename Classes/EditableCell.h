@@ -1,7 +1,7 @@
 /*
-     File: EditingViewController.h
+     File: EditableCell.h
  Abstract: 
- View controller for editing the content of a specific item.
+ Custom table cell used in the editing view's table. Contains a UITextField for in-place editing of content.
  
   Version: 1.1
  
@@ -49,34 +49,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class EditableCell, TypeListController;
-
-@interface EditingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSMutableDictionary *editingItem;
-    NSDictionary *editingItemCopy;
-    NSArray *editingTypes;
-    UITextField *nameField;
-    UITextField *typeField;
-    UITableView *tableView;
-    EditableCell *nameCell;
-    UITableViewCell *typeCell;
-    TypeListController *typeListController;
-    BOOL newItem;
-    NSMutableArray *editingContent;
-    NSString *sectionName;
-    UIView *headerView;
+@interface EditableCell : UITableViewCell {
+    UITextField *textField;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *editingItem;
-@property (nonatomic, copy) NSDictionary *editingItemCopy;
-@property (nonatomic, retain) NSMutableArray *editingContent;
-@property (nonatomic, retain) NSArray *editingTypes;
-@property (nonatomic, copy) NSString *sectionName;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) TypeListController *typeListController;
-@property (nonatomic, retain) UIView *headerView;
+@property (nonatomic, retain) UITextField *textField;
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
-    
 @end

@@ -1,7 +1,7 @@
 /*
-     File: EditingViewController.h
+     File: AppDelegate.h
  Abstract: 
- View controller for editing the content of a specific item.
+ Application delegate. Manages the object graph of data that is the "model" part of the app's MVC design.
  
   Version: 1.1
  
@@ -49,34 +49,21 @@
 
 #import <UIKit/UIKit.h>
 
-@class EditableCell, TypeListController;
+// Forward declaration of the main view controller's class for the compiler.
+@class DetailViewController;
 
-@interface EditingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
-    NSMutableDictionary *editingItem;
-    NSDictionary *editingItemCopy;
-    NSArray *editingTypes;
-    UITextField *nameField;
-    UITextField *typeField;
-    UITableView *tableView;
-    EditableCell *nameCell;
-    UITableViewCell *typeCell;
-    TypeListController *typeListController;
-    BOOL newItem;
-    NSMutableArray *editingContent;
-    NSString *sectionName;
-    UIView *headerView;
+@interface AppDelegate : NSObject <UIApplicationDelegate> {
+    UIWindow *window;
+    UINavigationController *navigationController;
+    DetailViewController *detailViewController;
+    NSMutableArray *data;
+    NSString *pathToUserCopyOfPlist;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *editingItem;
-@property (nonatomic, copy) NSDictionary *editingItemCopy;
-@property (nonatomic, retain) NSMutableArray *editingContent;
-@property (nonatomic, retain) NSArray *editingTypes;
-@property (nonatomic, copy) NSString *sectionName;
-@property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) TypeListController *typeListController;
-@property (nonatomic, retain) UIView *headerView;
+@property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UINavigationController *navigationController;
+@property (nonatomic, retain) IBOutlet DetailViewController *detailViewController;
+@property (nonatomic, retain) NSMutableArray *data;
+@property (nonatomic, copy) NSString *pathToUserCopyOfPlist;
 
-- (IBAction)cancel:(id)sender;
-- (IBAction)save:(id)sender;
-    
 @end
