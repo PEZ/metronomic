@@ -21,7 +21,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.1</string>
 	<key>NSMainNibFile</key>
-	<string>Main</string>
+	<string>ListView</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 </dict>

@@ -1,8 +1,8 @@
-#import "EditingViewController.h"
+#import "PropertiesViewController.h"
 #import "PropertyCell.h"
 #import "Song.h"
 
-@implementation EditingViewController
+@implementation PropertiesViewController
 
 @synthesize song, originalSongData, songs, newItem, tableView, headerView;
 

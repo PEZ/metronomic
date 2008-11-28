@@ -1,6 +1,6 @@
 #import "ListViewController.h"
 #import "DetailCell.h"
-#import "EditingViewController.h"
+#import "PropertiesViewController.h"
 #import "Song.h"
 
 @implementation ListViewController
@@ -28,9 +28,9 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (EditingViewController *)editingViewController {
+- (PropertiesViewController *)editingViewController {
     if (editingViewController == nil) {
-        EditingViewController *controller = [[EditingViewController alloc] initWithNibName:@"EditingView" bundle:nil];
+        PropertiesViewController *controller = [[PropertiesViewController alloc] initWithNibName:@"PropertiesView" bundle:nil];
         self.editingViewController = controller;
         [controller release];
     }
@@ -93,7 +93,7 @@
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.editing) {
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
-		EditingViewController *controller = self.editingViewController;
+		PropertiesViewController *controller = self.editingViewController;
 		if (indexPath.row < [song_list.songs count]) {
 			controller.song = [song_list.songs objectAtIndex:indexPath.row];
 		} else {
@@ -127,7 +127,7 @@
         [song_list.songs removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-		EditingViewController *controller = self.editingViewController;
+		PropertiesViewController *controller = self.editingViewController;
 		controller.song = nil;
 		controller.songs = song_list.songs;
 		[self.navigationController pushViewController:controller animated:YES];

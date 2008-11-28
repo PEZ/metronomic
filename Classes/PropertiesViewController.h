@@ -1,7 +1,7 @@
 #import <UIKit/UIKit.h>
 @class Song, PropertyCell;
 
-@interface EditingViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+@interface PropertiesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     Song *song;
     NSDictionary *originalSongData;
 	NSMutableArray *songs;

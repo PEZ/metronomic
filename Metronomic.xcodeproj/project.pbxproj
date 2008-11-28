@@ -11,17 +11,17 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		3027C0ED0EB66D0500F9580A /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3027C0DF0EB66D0500F9580A /* EditingViewController.m */; };
+		3027C0ED0EB66D0500F9580A /* PropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3027C0DF0EB66D0500F9580A /* PropertiesViewController.m */; };
 		3027C0EE0EB66D0500F9580A /* PropertyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3027C0E10EB66D0500F9580A /* PropertyCell.m */; };
 		3027C0F10EB66D0500F9580A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3027C0E70EB66D0500F9580A /* AppDelegate.m */; };
 		3027C0F20EB66D0500F9580A /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3027C0E80EB66D0500F9580A /* ListViewController.m */; };
 		3027C0F30EB66D0500F9580A /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3027C0EA0EB66D0500F9580A /* DetailCell.m */; };
 		3027C0F50EB66D0E00F9580A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3027C0F40EB66D0E00F9580A /* Default.png */; };
 		3027C1920EB6713F00F9580A /* appData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3027C1910EB6713F00F9580A /* appData.plist */; };
+		EB27DA8A0EDFED1B00D8E461 /* EditProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB27DA890EDFED1B00D8E461 /* EditProperty.xib */; };
 		EB5A9D910ED98DF90091DDD9 /* README.Textile in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9D900ED98DF90091DDD9 /* README.Textile */; };
-		EB5A9DA70ED9D54E0091DDD9 /* Main.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9DA60ED9D54E0091DDD9 /* Main.xib */; };
-		EB5A9DA90ED9D6D50091DDD9 /* EditingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9DA80ED9D6D50091DDD9 /* EditingView.xib */; };
-		EB5A9DAB0ED9D6DE0091DDD9 /* TypeList.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9DAA0ED9D6DE0091DDD9 /* TypeList.xib */; };
+		EB5A9DA70ED9D54E0091DDD9 /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9DA60ED9D54E0091DDD9 /* ListView.xib */; };
+		EB5A9DA90ED9D6D50091DDD9 /* PropertiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9DA80ED9D6D50091DDD9 /* PropertiesView.xib */; };
 		EB62CA450EDAC39600E5CFB3 /* Song.m in Sources */ = {isa = PBXBuildFile; fileRef = EB62CA440EDAC39600E5CFB3 /* Song.m */; };
 		EB62CA4A0EDAC6FD00E5CFB3 /* SongList.m in Sources */ = {isa = PBXBuildFile; fileRef = EB62CA490EDAC6FD00E5CFB3 /* SongList.m */; };
 /* End PBXBuildFile section */
@@ -32,8 +32,8 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3027C0DF0EB66D0500F9580A /* EditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
-		3027C0E00EB66D0500F9580A /* EditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingViewController.h; sourceTree = "<group>"; };
+		3027C0DF0EB66D0500F9580A /* PropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertiesViewController.m; sourceTree = "<group>"; };
+		3027C0E00EB66D0500F9580A /* PropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertiesViewController.h; sourceTree = "<group>"; };
 		3027C0E10EB66D0500F9580A /* PropertyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PropertyCell.m; sourceTree = "<group>"; };
 		3027C0E20EB66D0500F9580A /* PropertyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PropertyCell.h; sourceTree = "<group>"; };
 		3027C0E70EB66D0500F9580A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,10 +45,10 @@
 		3027C0F40EB66D0E00F9580A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		3027C1910EB6713F00F9580A /* appData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appData.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB27DA890EDFED1B00D8E461 /* EditProperty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProperty.xib; sourceTree = "<group>"; };
 		EB5A9D900ED98DF90091DDD9 /* README.Textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.Textile; sourceTree = "<group>"; };
-		EB5A9DA60ED9D54E0091DDD9 /* Main.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Main.xib; sourceTree = "<group>"; };
-		EB5A9DA80ED9D6D50091DDD9 /* EditingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditingView.xib; sourceTree = "<group>"; };
-		EB5A9DAA0ED9D6DE0091DDD9 /* TypeList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TypeList.xib; sourceTree = "<group>"; };
+		EB5A9DA60ED9D54E0091DDD9 /* ListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListView.xib; sourceTree = "<group>"; };
+		EB5A9DA80ED9D6D50091DDD9 /* PropertiesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertiesView.xib; sourceTree = "<group>"; };
 		EB5A9DB30ED9D7850091DDD9 /* Metronomic_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Metronomic_Prefix.pch; sourceTree = "<group>"; };
 		EB62CA430EDAC39600E5CFB3 /* Song.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Song.h; sourceTree = "<group>"; };
 		EB62CA440EDAC39600E5CFB3 /* Song.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Song.m; sourceTree = "<group>"; };
@@ -73,8 +73,8 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				3027C0DF0EB66D0500F9580A /* EditingViewController.m */,
-				3027C0E00EB66D0500F9580A /* EditingViewController.h */,
+				3027C0DF0EB66D0500F9580A /* PropertiesViewController.m */,
+				3027C0E00EB66D0500F9580A /* PropertiesViewController.h */,
 				3027C0E10EB66D0500F9580A /* PropertyCell.m */,
 				3027C0E20EB66D0500F9580A /* PropertyCell.h */,
 				3027C0E80EB66D0500F9580A /* ListViewController.m */,
@@ -124,12 +124,12 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				EB5A9DAA0ED9D6DE0091DDD9 /* TypeList.xib */,
-				EB5A9DA80ED9D6D50091DDD9 /* EditingView.xib */,
-				EB5A9DA60ED9D54E0091DDD9 /* Main.xib */,
+				EB5A9DA80ED9D6D50091DDD9 /* PropertiesView.xib */,
+				EB5A9DA60ED9D54E0091DDD9 /* ListView.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				3027C1910EB6713F00F9580A /* appData.plist */,
 				3027C0F40EB66D0E00F9580A /* Default.png */,
+				EB27DA890EDFED1B00D8E461 /* EditProperty.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -196,9 +196,9 @@
 				3027C0F50EB66D0E00F9580A /* Default.png in Resources */,
 				3027C1920EB6713F00F9580A /* appData.plist in Resources */,
 				EB5A9D910ED98DF90091DDD9 /* README.Textile in Resources */,
-				EB5A9DA70ED9D54E0091DDD9 /* Main.xib in Resources */,
-				EB5A9DA90ED9D6D50091DDD9 /* EditingView.xib in Resources */,
-				EB5A9DAB0ED9D6DE0091DDD9 /* TypeList.xib in Resources */,
+				EB5A9DA70ED9D54E0091DDD9 /* ListView.xib in Resources */,
+				EB5A9DA90ED9D6D50091DDD9 /* PropertiesView.xib in Resources */,
+				EB27DA8A0EDFED1B00D8E461 /* EditProperty.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,7 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				3027C0ED0EB66D0500F9580A /* EditingViewController.m in Sources */,
+				3027C0ED0EB66D0500F9580A /* PropertiesViewController.m in Sources */,
 				3027C0EE0EB66D0500F9580A /* PropertyCell.m in Sources */,
 				3027C0F10EB66D0500F9580A /* AppDelegate.m in Sources */,
 				3027C0F20EB66D0500F9580A /* ListViewController.m in Sources */,
