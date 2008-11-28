@@ -3,68 +3,16 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>content</key>
-		<array>
-			<dict>
-				<key>Name</key>
-				<string>Steak</string>
-				<key>Type</key>
-				<string>meat</string>
-			</dict>
-		</array>
-		<key>name</key>
-		<string>Food</string>
-		<key>types</key>
-		<array>
-			<string>meat</string>
-			<string>vegetable</string>
-			<string>starch</string>
-		</array>
-	</dict>
-	<dict>
-		<key>content</key>
-		<array>
-			<dict>
-				<key>Name</key>
-				<string>Ginger Ale</string>
-				<key>Type</key>
-				<string>soda</string>
-			</dict>
-			<dict>
-				<key>Name</key>
-				<string>Pinot Noir</string>
-				<key>Type</key>
-				<string>wine</string>
-			</dict>
-		</array>
-		<key>name</key>
-		<string>Beverage</string>
-		<key>types</key>
-		<array>
-			<string>juice</string>
-			<string>wine</string>
-			<string>soda</string>
-			<string>beer</string>
-		</array>
-	</dict>
-	<dict>
-		<key>content</key>
-		<array>
-			<dict>
-				<key>Name</key>
-				<string>German Chocolate</string>
-				<key>Type</key>
-				<string>cake</string>
-			</dict>
-		</array>
-		<key>name</key>
-		<string>Dessert</string>
-		<key>types</key>
-		<array>
-			<string>fruit</string>
-			<string>pie</string>
-			<string>cake</string>
-		</array>
+		<key>Name</key>
+		<string>Demo song</string>
+		<key>Signature</key>
+		<string>2/4</string>
+		<key>BPM</key>
+		<integer>80</integer>
+		<key>Lamps</key>
+		<integer>2</integer>
+		<key>Comment</key>
+		<string>The comment text will show up while the song is playing</string>
 	</dict>
 </array>
 </plist>
