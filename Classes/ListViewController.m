@@ -2,17 +2,18 @@
 #import "DetailCell.h"
 #import "PropertiesViewController.h"
 #import "Song.h"
+#import "SongList.h"
 
 @implementation ListViewController
 
-@synthesize song_list, tableView, editingViewController;
+@synthesize song_list, tableView, propertiesViewController;
 
 - (void)dealloc {
     tableView.delegate = nil;
     tableView.dataSource = nil;
     [tableView release]; 
     [song_list release];
-    [editingViewController release];
+    [propertiesViewController release];
     [super dealloc];
 }
 
@@ -28,13 +29,13 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-- (PropertiesViewController *)editingViewController {
-    if (editingViewController == nil) {
+- (PropertiesViewController *)propertiesViewController {
+    if (propertiesViewController == nil) {
         PropertiesViewController *controller = [[PropertiesViewController alloc] initWithNibName:@"PropertiesView" bundle:nil];
-        self.editingViewController = controller;
+        self.propertiesViewController = controller;
         [controller release];
     }
-    return editingViewController;
+    return propertiesViewController;
 }
 
 #pragma mark Table Content and Appearance
@@ -93,7 +94,7 @@
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if (self.editing) {
         [tableView deselectRowAtIndexPath:indexPath animated:NO];
-		PropertiesViewController *controller = self.editingViewController;
+		PropertiesViewController *controller = self.propertiesViewController;
 		if (indexPath.row < [song_list.songs count]) {
 			controller.song = [song_list.songs objectAtIndex:indexPath.row];
 		} else {
@@ -127,7 +128,7 @@
         [song_list.songs removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-		PropertiesViewController *controller = self.editingViewController;
+		PropertiesViewController *controller = self.propertiesViewController;
 		controller.song = nil;
 		controller.songs = song_list.songs;
 		[self.navigationController pushViewController:controller animated:YES];

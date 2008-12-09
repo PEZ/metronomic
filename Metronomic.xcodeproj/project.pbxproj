@@ -19,6 +19,7 @@
 		3027C0F50EB66D0E00F9580A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 3027C0F40EB66D0E00F9580A /* Default.png */; };
 		3027C1920EB6713F00F9580A /* appData.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3027C1910EB6713F00F9580A /* appData.plist */; };
 		EB27DA8A0EDFED1B00D8E461 /* EditProperty.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB27DA890EDFED1B00D8E461 /* EditProperty.xib */; };
+		EB27DAC40EDFF25500D8E461 /* EditPropertyController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB27DAC30EDFF25500D8E461 /* EditPropertyController.m */; };
 		EB5A9D910ED98DF90091DDD9 /* README.Textile in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9D900ED98DF90091DDD9 /* README.Textile */; };
 		EB5A9DA70ED9D54E0091DDD9 /* ListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9DA60ED9D54E0091DDD9 /* ListView.xib */; };
 		EB5A9DA90ED9D6D50091DDD9 /* PropertiesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB5A9DA80ED9D6D50091DDD9 /* PropertiesView.xib */; };
@@ -46,6 +47,8 @@
 		3027C1910EB6713F00F9580A /* appData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = appData.plist; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB27DA890EDFED1B00D8E461 /* EditProperty.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProperty.xib; sourceTree = "<group>"; };
+		EB27DAC20EDFF25500D8E461 /* EditPropertyController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPropertyController.h; sourceTree = "<group>"; };
+		EB27DAC30EDFF25500D8E461 /* EditPropertyController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPropertyController.m; sourceTree = "<group>"; };
 		EB5A9D900ED98DF90091DDD9 /* README.Textile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.Textile; sourceTree = "<group>"; };
 		EB5A9DA60ED9D54E0091DDD9 /* ListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ListView.xib; sourceTree = "<group>"; };
 		EB5A9DA80ED9D6D50091DDD9 /* PropertiesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PropertiesView.xib; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 				EB62CA440EDAC39600E5CFB3 /* Song.m */,
 				EB62CA480EDAC6FD00E5CFB3 /* SongList.h */,
 				EB62CA490EDAC6FD00E5CFB3 /* SongList.m */,
+				EB27DAC20EDFF25500D8E461 /* EditPropertyController.h */,
+				EB27DAC30EDFF25500D8E461 /* EditPropertyController.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 				3027C0F30EB66D0500F9580A /* DetailCell.m in Sources */,
 				EB62CA450EDAC39600E5CFB3 /* Song.m in Sources */,
 				EB62CA4A0EDAC6FD00E5CFB3 /* SongList.m in Sources */,
+				EB27DAC40EDFF25500D8E461 /* EditPropertyController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

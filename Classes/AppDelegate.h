@@ -1,8 +1,6 @@
 #import <UIKit/UIKit.h>
-#import "SongList.h"
 
-// Forward declaration of the main view controller's class for the compiler.
-@class ListViewController;
+@class ListViewController, SongList;
 
 @interface AppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;

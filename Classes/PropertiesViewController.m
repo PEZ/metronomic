@@ -1,10 +1,11 @@
 #import "PropertiesViewController.h"
 #import "PropertyCell.h"
+#import "EditPropertyController.h"
 #import "Song.h"
 
 @implementation PropertiesViewController
 
-@synthesize song, originalSongData, songs, newItem, tableView, headerView;
+@synthesize song, originalSongData, songs, newItem, tableView, editController;
 
 - (void)setSong:(Song *)anItem {
     [song release];
@@ -21,8 +22,14 @@
     [originalSongData release];
 	[songs release];
     [tableView release];
-    [headerView release];
     [super dealloc];
+}
+
+- (EditPropertyController *)editController {
+    if (editController == nil) {
+        self.editController = [[EditPropertyController alloc] initWithNibName:@"EditProperty" bundle:nil];;
+    }
+    return editController;
 }
 
 - (IBAction)cancel:(id)sender {
@@ -44,12 +51,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (void)viewDidLoad {
+/*
+ - (void)viewDidLoad {
     self.headerView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, 100)] autorelease];
 }
+*/
 
 - (PropertyCell *) setUpCell:(PropertyCell *)cell withData:(id)data identifyUsing:(NSString *)identifier {
-  if (!cell) {
+	if (!cell) {
         cell = [[PropertyCell alloc] initWithFrame:CGRectZero reuseIdentifier:identifier];
     }
     cell.textField.text = [NSString stringWithFormat:@"%@", data];
@@ -88,6 +97,10 @@
 
 - (void)tableView:(UITableView *)aTableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [aTableView deselectRowAtIndexPath:indexPath animated:YES];
+	PropertyCell *cell = (PropertyCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+	self.editController.title = cell.promptField.text;
+	self.editController.editField.text = [self tableView:tableView cellForRowAtIndexPath:indexPath].text;
+	[self.navigationController pushViewController:self.editController animated:YES];
 }
 
 - (UITableViewCellAccessoryType)tableView:(UITableView *)aTableView accessoryTypeForRowWithIndexPath:(NSIndexPath *)indexPath {
@@ -95,11 +108,11 @@
 }
 
 - (CGFloat)tableView:(UITableView *)aTableView heightForHeaderInSection:(NSInteger)section {
-    return 10.0;
+    return 0.0;
 }
 
 - (UIView *)tableView:(UITableView *)aTableView viewForHeaderInSection:(NSInteger)section {
-    return headerView;
+    return nil;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {	

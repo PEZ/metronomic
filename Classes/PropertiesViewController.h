@@ -1,5 +1,5 @@
 #import <UIKit/UIKit.h>
-@class Song, PropertyCell;
+@class Song, PropertyCell, EditPropertyController;
 
 @interface PropertiesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
     Song *song;
@@ -12,15 +12,15 @@
     PropertyCell *lampsCell;
     PropertyCell *commentCell;
     BOOL newItem;
-    UIView *headerView;
+	EditPropertyController *editController;
 }
 
 @property (nonatomic, retain) Song *song;
 @property (nonatomic, copy) NSDictionary *originalSongData;
 @property (nonatomic, retain) NSMutableArray *songs;
 @property (nonatomic, retain) IBOutlet UITableView *tableView;
-@property (nonatomic, retain) UIView *headerView;
 @property BOOL newItem;
+@property (nonatomic, retain) EditPropertyController *editController;
 
 - (IBAction)cancel:(id)sender;
 - (IBAction)save:(id)sender;
